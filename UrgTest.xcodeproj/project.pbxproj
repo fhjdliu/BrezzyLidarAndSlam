@@ -23,6 +23,9 @@
 		4295A7DD1D1A8E5B00090946 /* hokuyo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4295A7D81D1A8E5B00090946 /* hokuyo.cpp */; };
 		4295A7DE1D1A8E5B00090946 /* serial_device.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4295A7DB1D1A8E5B00090946 /* serial_device.cpp */; };
 		4295A7E01D1A9E0900090946 /* URG04LX2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4295A7D51D1A8E5000090946 /* URG04LX2.cpp */; };
+		42F77C0B1D26134D00B65258 /* MapSearchNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42F77C081D26134D00B65258 /* MapSearchNode.cpp */; };
+		42F77C2D1D2A40C800B65258 /* Dstar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42F77C2B1D2A40C800B65258 /* Dstar.cpp */; };
+		42F77C2F1D2A40EC00B65258 /* dstarMain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42F77C2E1D2A40EC00B65258 /* dstarMain.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -73,6 +76,13 @@
 		4295A7DC1D1A8E5B00090946 /* serial_device.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = serial_device.hpp; sourceTree = "<group>"; };
 		42D63C501D22556500E6E4DD /* exp2.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = exp2.dat; sourceTree = "<group>"; };
 		42D63C511D22586C00E6E4DD /* exp1.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = exp1.dat; sourceTree = "<group>"; };
+		42F77C081D26134D00B65258 /* MapSearchNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MapSearchNode.cpp; sourceTree = "<group>"; };
+		42F77C091D26134D00B65258 /* MapSearchNode.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MapSearchNode.hpp; sourceTree = "<group>"; };
+		42F77C0A1D26134D00B65258 /* stlastar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stlastar.h; sourceTree = "<group>"; };
+		42F77C0C1D261A0300B65258 /* fsa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fsa.h; sourceTree = "<group>"; };
+		42F77C2B1D2A40C800B65258 /* Dstar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Dstar.cpp; sourceTree = "<group>"; };
+		42F77C2C1D2A40C800B65258 /* Dstar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dstar.h; sourceTree = "<group>"; };
+		42F77C2E1D2A40EC00B65258 /* dstarMain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dstarMain.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,10 +171,33 @@
 				424354F91D20F70D00F8B415 /* log2pgm.cpp */,
 				42D63C501D22556500E6E4DD /* exp2.dat */,
 				42D63C511D22586C00E6E4DD /* exp1.dat */,
+				42F77C2A1D2A408900B65258 /* DStarPathFinding */,
+				42F77C071D26133200B65258 /* AStarPathFinding */,
 				424354D21D20D38200F8B415 /* BreezySlam */,
 				424354D11D20D36600F8B415 /* BreezyLidar */,
 			);
 			path = UrgTest;
+			sourceTree = "<group>";
+		};
+		42F77C071D26133200B65258 /* AStarPathFinding */ = {
+			isa = PBXGroup;
+			children = (
+				42F77C081D26134D00B65258 /* MapSearchNode.cpp */,
+				42F77C091D26134D00B65258 /* MapSearchNode.hpp */,
+				42F77C0A1D26134D00B65258 /* stlastar.h */,
+				42F77C0C1D261A0300B65258 /* fsa.h */,
+			);
+			name = AStarPathFinding;
+			sourceTree = "<group>";
+		};
+		42F77C2A1D2A408900B65258 /* DStarPathFinding */ = {
+			isa = PBXGroup;
+			children = (
+				42F77C2B1D2A40C800B65258 /* Dstar.cpp */,
+				42F77C2C1D2A40C800B65258 /* Dstar.h */,
+				42F77C2E1D2A40EC00B65258 /* dstarMain.cpp */,
+			);
+			name = DStarPathFinding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				424354E31D20D3C500F8B415 /* Scan.cpp in Sources */,
+				42F77C0B1D26134D00B65258 /* MapSearchNode.cpp in Sources */,
 				4295A7E01D1A9E0900090946 /* URG04LX2.cpp in Sources */,
 				424354F11D20D3F500F8B415 /* coreslam_i686.c in Sources */,
 				4295A7DE1D1A8E5B00090946 /* serial_device.cpp in Sources */,
@@ -231,11 +265,13 @@
 				424354F51D20D3F500F8B415 /* ziggurat.c in Sources */,
 				424354FC1D20F87C00F8B415 /* anotherMain.cpp in Sources */,
 				424354E41D20D3C500F8B415 /* WheeledRobot.cpp in Sources */,
+				42F77C2F1D2A40EC00B65258 /* dstarMain.cpp in Sources */,
 				4295A7D31D1A8DBF00090946 /* urgtest.cpp in Sources */,
 				424354F81D20F1F000F8B415 /* Laser.cpp in Sources */,
 				4295A7C21D1A8D8500090946 /* main.cpp in Sources */,
 				424354F31D20D3F500F8B415 /* coreslam.c in Sources */,
 				424354E21D20D3C500F8B415 /* Map.cpp in Sources */,
+				42F77C2D1D2A40C800B65258 /* Dstar.cpp in Sources */,
 				424354F41D20D3F500F8B415 /* random.c in Sources */,
 				424354E01D20D3C500F8B415 /* algorithms.cpp in Sources */,
 				424354FA1D20F70D00F8B415 /* log2pgm.cpp in Sources */,
